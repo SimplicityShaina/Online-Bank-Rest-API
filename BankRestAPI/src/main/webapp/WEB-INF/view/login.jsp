@@ -8,7 +8,7 @@
     <title>LOGIN</title>
  
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-   
+  	<link rel="icon" href="https://pngimg.com/uploads/bank/bank_PNG26.png">
     <style media="screen">
       *,
 *:before,
@@ -127,7 +127,7 @@ input{
 					<tr><td >
 						<a href="/register" class="btn">Register</a></td>
 					</tr>               		
-		           		<tr><td><input type="submit" value="login"> </td></tr> 
+		           		<tr><td><input type="submit" value="Login"> </td></tr> 
 							<form:errors path="*" cssClass="error"/>
 					<tr>
 						<td>${error}</td>

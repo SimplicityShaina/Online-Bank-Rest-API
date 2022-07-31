@@ -1,16 +1,16 @@
-package com.project.onlinebanking.controller;
+package com.example.MicroBanking.controller;
 
 import org.springframework.http.HttpStatus;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import com.project.onlinebanking.domain.ExceptionResponse;
+import com.example.MicroBanking.domain.ExceptionResponse;
 
 @ControllerAdvice   //handles exception throughout the whole application
 public class ExceptionController {
 	
+
 
 	@ExceptionHandler  //works at method level exception
 	public ResponseEntity<ExceptionResponse>handleException(Exception ex){

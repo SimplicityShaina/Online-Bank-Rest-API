@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" href="https://pngimg.com/uploads/bank/bank_PNG26.png">
 <title>WELCOME</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -31,28 +32,17 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <a href="/set-myaccount" class="w3-bar-item w3-button w3-padding-large w3-black">
+  <a href="/viewAccountTransac" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-user w3-xxlarge"></i>
-    <p>My Account</p>
+    <p>View Account/Transaction</p>
   </a>
   
   
-  <a href="/depositform" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+  <a href="http://localhost:8081/welcome" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
       <i class="fa fa-user w3-xxlarge"></i>
-    <p>Deposit</p>
+    <p>Get Transaction</p>
   </a>
-  <a href="/transamt" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>Transfer</p>
-  </a>
-  <a href="/withdrawform" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>Withdraw</p>
-    </a>
-     <a href="/listTransaction" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>Transaction Logs</p>
-  </a>
+
 </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->

@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.synergisticit</groupId>
-	<artifactId>onlinebankingapplication</artifactId>
+	<groupId>com.example</groupId>
+	<artifactId>MicroBanking</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
@@ -47,8 +47,7 @@
 		<dependency>
 	<groupId>javax.servlet</groupId> 
 	<artifactId>jstl</artifactId> 
-	<version>1.2</version> 
-</dependency> 
+	</dependency> 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>

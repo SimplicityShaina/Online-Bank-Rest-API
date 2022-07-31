@@ -5,9 +5,10 @@
 
 <html>
 <head>
-<title>W3.CSS Template</title>
+<title>CREATE ACCOUNT</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="https://pngimg.com/uploads/bank/bank_PNG26.png">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -23,7 +24,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 </style>
 </head>
 <body class="w3-black">
-	<br>Please create account:<br>
+	<h3>Please create account:<h3>
    	<form:form action="/saveaccount" method="post" modelAttribute="account">
 	<table>
 	
@@ -72,7 +73,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 	<tr><td colspan=2><input type="submit" value="save"> </td></tr>
 	
 		<tr><td >
-				<a href="/set-myaccount" class="btn">Back</a></td>
+				<a href="/welcome" class="btn">Back</a></td>
 				</tr>
 	</table>
 	<form:errors path="*" cssClass="error"></form:errors>

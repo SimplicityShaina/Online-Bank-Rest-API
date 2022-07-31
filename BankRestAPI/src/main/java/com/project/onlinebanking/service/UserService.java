@@ -1,8 +1,6 @@
 package com.project.onlinebanking.service;
 
-import java.util.Collection;
-
-import org.springframework.security.core.GrantedAuthority;
+import java.util.List;
 
 import com.project.onlinebanking.domain.User;
 
@@ -11,7 +9,7 @@ public interface UserService {
 
 	public User findByUsername(String username);
 
-	
+	public List<User> findAllUser();
 
 
 }

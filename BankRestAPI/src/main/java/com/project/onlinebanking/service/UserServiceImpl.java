@@ -1,5 +1,7 @@
 package com.project.onlinebanking.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -28,5 +30,12 @@ public class UserServiceImpl implements UserService {
 		return userRepository.findByUsername(username);
 		
 	}
+	
+	@Override
+	public List<User> findAllUser() {
+		// TODO Auto-generated method stub
+		return userRepository.findAll();
+	}
+	
 
 }

@@ -1,13 +1,6 @@
-package com.project.onlinebanking.config;
+package com.example.MicroBanking.config;
 
 import java.util.Properties;
-
-
-
-
-
-
-
 import javax.sql.DataSource;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
@@ -23,11 +16,12 @@ import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
-import com.project.onlinebanking.domain.User;
+import com.example.MicroBanking.domain.Account;
+import com.example.MicroBanking.domain.Transaction;
+
 
 @Configuration
 public class Config {
@@ -60,7 +54,7 @@ public class Config {
 		
 		LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
 		entityManagerFactoryBean.setDataSource(dataSource());
-		entityManagerFactoryBean.setPackagesToScan( new String[] {"com.project.onlinebanking" } );
+		entityManagerFactoryBean.setPackagesToScan( new String[] {"com.example.MicroBanking" } );
 		entityManagerFactoryBean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
 		entityManagerFactoryBean.setJpaProperties(hibernateProperties());
 		
@@ -81,12 +75,14 @@ public class Config {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
 		sessionFactory.setDataSource(dataSource());
 		sessionFactory.setHibernateProperties(hibernateProperties());
-		sessionFactory.setAnnotatedClasses(User.class);
+		//sessionFactory.setAnnotatedClasses(Account.class,Branch.class,Customer.class,Loan.class,Role.class,Transaction.class,User.class);
+		sessionFactory.setAnnotatedClasses(Account.class,Transaction.class);
 		return sessionFactory;
 		
 	}
-
 	
+	
+
 
 	public Properties hibernateProperties(){
 		
@@ -110,13 +106,6 @@ public class Config {
 		
 	}
 	
-	@Bean
-	public BCryptPasswordEncoder bCryptPasswordEncoder() {
-		return new BCryptPasswordEncoder();
-	}	
-
-	
-
 
 	
 	public void configureMessageConverters(java.util.List<HttpMessageConverter<?>> converters) {		

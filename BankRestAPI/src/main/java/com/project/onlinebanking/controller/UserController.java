@@ -1,29 +1,29 @@
 package com.project.onlinebanking.controller;
 
 
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
-
 import javax.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.web.authentication.RememberMeServices;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.client.RestTemplate;
 
 import com.project.onlinebanking.domain.User;
 import com.project.onlinebanking.service.UserService;
 import com.project.onlinebanking.validation.UserValidator;
+
+
 
 @Controller
 public class UserController {
@@ -41,6 +41,8 @@ public class UserController {
 	
 	RestTemplate restTemplate = new RestTemplate();
 	
+	
+	
 	@GetMapping("/registers")
 	public String registerform(User user,Model model)
 	{
@@ -50,9 +52,6 @@ public class UserController {
 	@GetMapping("/register")
 	public String saveregister(@ModelAttribute("user") User user,BindingResult result)
 	{
-	
-		System.out.println(" USER FROM MODEL "+user);
-		
 		userValidator.validate(user,result);
 		
 		if(result.hasErrors()){
@@ -68,7 +67,6 @@ public class UserController {
 	@GetMapping("/login")
 	public String loginPage(@ModelAttribute User user, String error,String logout,HttpServletRequest request,HttpServletResponse response,Model model){
 		model.addAttribute("user", user);
-		System.out.println("########LOGIN PAGE #########"+user);
 		if(error!=null){
 			model.addAttribute("error", "password and login not avaliable");
 		} 
@@ -85,8 +83,8 @@ public class UserController {
 		        String encodedPassword = userDB.getPassword();
 		        
 		        if(bCryptPasswordEncoder.matches(user.getPassword(), encodedPassword)) {
-		        	 restTemplate.getForObject("http://localhost:8081/welcome/"+user+"/"+ encodedPassword, 
-		     	            String.class);
+		        	 return "welcome";
+		        	 
 		        }
 		        else {
 		        	model.addAttribute("error", "username or password is incorrect");
@@ -97,12 +95,17 @@ public class UserController {
 		return "login";
 	}
 	
+	@GetMapping(value="/findAllUser",produces=MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<List<User>> findAllUser(){
+		List<User> userList=userService.findAllUser();
+		return new ResponseEntity<List<User>>(userList,HttpStatus.OK);
+		}
 	
 	
-	@GetMapping("/set-myaccount")
+	@GetMapping("/welcome")
 	public String MyAccountPage(User user,Model model)
 	{
-		return "myaccount";
+		return "welcome";
 	}
 
 	
@@ -110,7 +113,26 @@ public class UserController {
 	public String logout(){
 		return  "redirect:/login";
 	}
-
+	
+	@GetMapping("/GetUserAll")
+	public String GetObjectFromAccount (Model model) {
+	String getAllAccount=  restTemplate.getForObject("http://localhost:8081/findAllAccount",String.class);
+	model.addAttribute("user", getAllAccount);
+	return "viewAccount";
+	}
+	
+	@GetMapping("/GetTransactionAll")
+	public String GetObjectFromTransaction (Model model) {
+	String getAllTransaction=  restTemplate.getForObject("http://localhost:8081/findAllTransaction",String.class);
+	model.addAttribute("transac", getAllTransaction);
+	return "ListTransactiom";
+	}
+	
+	@GetMapping("/viewAccountTransac")
+	public String viewAccountTrans(){
+		return  "accountDetals";
+	}
+	
 }
 	
 

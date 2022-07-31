@@ -1,2 +1,0 @@
-Withdraw amount
-${transaction}

@@ -10,7 +10,7 @@
       <meta name="csrf-token" content="Mn+ohv46xsr0GK3z/0d82DcWyT4jV22gaEpLHAJL4yOukhdLt/K5eHLdoBCF8gYPWyOrpPV8AvI1xxIVFcoO7Q==" />
   
     <title>REGISTER</title>
- 
+ 	<link rel="icon" href="https://pngimg.com/uploads/bank/bank_PNG26.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
    
     <style media="screen">
@@ -110,18 +110,23 @@ input{
 	font-family: 'Poppins',sans-serif;
     color: red;
 }
- type="text/css" >
-		.error{color:Red;}
+.error{
+	color:Red;
+}
 	
     </style>
 </head>
 <body>
+
 	<div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
     </div>  
     	<form:form action="register" method="get" modelAttribute="user">
 		<table>
+			<tr>
+				<th><h1>Register</h1></th>
+			</tr>
 
 			<tr><td> UserName: <form:input class= "space" path="username"/> </td></tr>
 				<td colspan="5"><form:errors path="username" class= "redError" cssClass="error"/> </td>
