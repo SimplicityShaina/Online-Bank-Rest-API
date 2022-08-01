@@ -1,4 +1,3 @@
-
 <%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
@@ -6,9 +5,11 @@
 <head>
   <!-- Design by foolishdeveloper.com -->
     <title>LOGIN</title>
- 
+ 	<link rel="icon" href="https://pngimg.com/uploads/bank/bank_PNG26.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
-  	<link rel="icon" href="https://pngimg.com/uploads/bank/bank_PNG26.png">
+    <!--Stylesheet-->
     <style media="screen">
       *,
 *:before,
@@ -51,7 +52,7 @@ body{
     right: -30px;
     bottom: -80px;
 }
-form{
+.form{
     height: 520px;
     width: 400px;
     background-color: rgba(255,255,255,0.13);
@@ -65,14 +66,23 @@ form{
     box-shadow: 0 0 40px rgba(8,7,16,0.6);
     padding: 50px 35px;
 }
-form *{
+.form *{
     font-family: 'Poppins',sans-serif;
     color: #ffffff;
     letter-spacing: 0.5px;
     outline: none;
     border: none;
 }
-
+.form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+h3
+{
+    font-family: cursive;
+}
 label{
     display: block;
     margin-top: 30px;
@@ -93,48 +103,97 @@ input{
 ::placeholder{
     color: #e5e5e5;
 }
-
-.Font{
-	font-family: 'Poppins',sans-serif;
-    color: #ffffff;
+.error-msg
+{
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 11px;
+    height: 30px;
+    display: block;
+    font-style: italic;
 }
-
+.error-msg p
+{
+    color: #ff2424;
+}
+.btn-submit{
+    margin-top: 30px;
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+}
+.btn-submit:hover
+{
+    color: white;
+    background-color: #51f92e;
+}
+.social{
+  margin-top: 30px;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.social a
+{
+    position: absolute;
+    right: 20px;
+    text-decoration: none;
+}
+.social a:hover
+{
+    color: #0040ff;
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
     <div class="background">
         <div class="shape"></div>
         <div class="shape"></div>
-    </div>    
-		<div>            
-		        	<form:form action="/login" method="post" modelAttribute="user">
-					<tr>
-						<th><h1>Online Banking</h1></th>
-					</tr>
-				
-					<tr>
-						<td>
-						<div class="font"> UserName: </div> <form:input path="username"/>
-						<form:errors path="username" cssClass="error"/>
-						</td>
-					</tr>
-					<tr>
-						<td> 
-						<div class="font">Password: </div> <form:input path="password"/></td>
-						<td><form:errors path="password" cssClass="error"/></td>
-					</tr>
-					 	
-					<tr><td >
-						<a href="/register" class="btn">Register</a></td>
-					</tr>               		
-		           		<tr><td><input type="submit" value="Login"> </td></tr> 
-							<form:errors path="*" cssClass="error"/>
-					<tr>
-						<td>${error}</td>
-					</tr>
-					</form:form>
-				
-        	
-  		</div>	
+    </div>
+    <form:form action="/login" method="post" modelAttribute="user" class="form">
+        <tr>
+            <h3>Online Banking</h3>
+        </tr>
+        <tr>
+            <td>
+                <div class="error-msg" align="center"><p>${error}</p></div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="username" style="margin-top: 0px;">Username </label>
+                <form:input path="username" type="text" placeholder="Email or Phone" id="username"/>
+          
+            </td>
+        </tr>
+        <tr>
+            <td> 
+                <label for="password">Password</label>
+                <form:input path="password" type="password" placeholder="Password" id="password"/>
+             
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <button class="btn-submit">Log In</button>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <div class="social">
+                    <a href="/register" class="btn">Register</a>
+                </div>
+            </td>
+        </tr>
+    </form:form>
 </body>
 </html>

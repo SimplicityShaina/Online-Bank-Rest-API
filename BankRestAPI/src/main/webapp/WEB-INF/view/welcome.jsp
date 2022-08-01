@@ -34,7 +34,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <a href="/viewAccountTransac" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-user w3-xxlarge"></i>
-    <p>View Account/Transaction</p>
+    <p>View Records</p>
   </a>
   
   
@@ -62,7 +62,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
     <h1 class="w3-jumbo"><span class="w3-hide-small">Welcome</span> ${user.username} to Online Bank</h1>
     <p>Inspiring you to create a better tomorrow.</p>
-    <img src="/w3images/man_smoke.jpg" alt="boy" class="w3-image" width="992" height="1108">
+    <img src="https://cdn.pixabay.com/photo/2021/06/27/14/42/money-6369029_1280.png" alt="boy" class="w3-image" width="992" height="500">
   </header>
   </div>
 
@@ -86,7 +86,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">Shaina Maulion</a></p>
+    <p class="w3-medium">Powered by <a href="https://www.yourtango.com/sites/default/files/styles/header_slider/public/image_blog/unnamed_44.png?itok=2DmZHceM" target="_blank" class="w3-hover-text-green">Shaina Maulion</a></p>
   <!-- End footer -->
   </footer>
 

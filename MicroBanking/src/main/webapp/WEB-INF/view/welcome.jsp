@@ -49,6 +49,16 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <a href="/withdrawform" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
     <i class="fa fa-envelope w3-xxlarge"></i>
     <p>Withdraw</p>
+  </a>
+    <a href="/listAccount" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>Account Records</p>
+      </a>
+    <a href="/listTransaction" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <i class="fa fa-envelope w3-xxlarge"></i>
+    <p>Transaction Records</p>
+  </a>
+  </a>
 </nav>
 
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
@@ -68,7 +78,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
     <h1 class="w3-jumbo"><span class="w3-hide-small">Welcome</span> ${user.username} to Online Bank</h1>
     <p>Inspiring you to create a better tomorrow.</p>
-    <img src="/w3images/man_smoke.jpg" alt="boy" class="w3-image" width="992" height="1108">
+    <img src="https://cdn.pixabay.com/photo/2021/06/27/14/42/money-6369029_1280.png" alt="boy" class="w3-image" width="992" height="1108">
   </header>
   </div>
 
@@ -92,7 +102,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <i class="fa fa-pinterest-p w3-hover-opacity"></i>
     <i class="fa fa-twitter w3-hover-opacity"></i>
     <i class="fa fa-linkedin w3-hover-opacity"></i>
-    <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">Shaina Maulion</a></p>
+    <p class="w3-medium">Powered by <a href="https://www.yourtango.com/sites/default/files/styles/header_slider/public/image_blog/unnamed_44.png?itok=2DmZHceM" target="_blank" class="w3-hover-text-green">Shaina Maulion</a></p>
   <!-- End footer -->
   </footer>
 

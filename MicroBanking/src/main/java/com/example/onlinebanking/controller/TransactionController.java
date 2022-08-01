@@ -119,4 +119,11 @@ public class TransactionController {
 		return new ResponseEntity<List<Transaction>>(transList,HttpStatus.OK);
 		}
 	
+	@GetMapping("/listTransaction")
+	public String listtTransactionPage(Transaction transaction)
+
+	{
+		return "listTransaction";
+	}
+	
 }

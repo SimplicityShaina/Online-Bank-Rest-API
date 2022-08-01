@@ -1,23 +1,218 @@
-<!DOCTYPE html>
-<html>
+<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en">
 <head>
-	<link rel="icon" href="https://pngimg.com/uploads/bank/bank_PNG26.png">
-<meta charset="ISO-8859-1">
-<title>VIEW ACCOUNT</title>
+  <!-- Design by foolishdeveloper.com -->
+    <title>RECORDS</title>
+ 	<link rel="icon" href="https://pngimg.com/uploads/bank/bank_PNG26.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #080710;
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        #1845ad,
+        #23a2f6
+    );
+    left: -80px;
+    top: -80px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #ff512f,
+        #f09819
+    );
+    right: -30px;
+    bottom: -80px;
+}
+.form{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+.form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+.form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+h3
+{
+    font-family: cursive;
+}
+label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+.error-msg
+{
+    width: 100%;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 11px;
+    height: 30px;
+    display: block;
+    font-style: italic;
+}
+.error-msg p
+{
+    color: #ff2424;
+}
+.btn-submit{
+    margin-top: 30px;
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+}
+.btn-submit:hover
+{
+    color: white;
+    background-color: #51f92e;
+}
+.social{
+  margin-top: 40px;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.link{
+  margin-top: 40px;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.back{
+  margin-top: 50px;
+  display: flex;
+  position: relative;
+  width: 100%;
+}
+.social a
+{
+    position: absolute;
+    right: 73px;
+    text-decoration: none;
+    padding: 20px;
+}
+.link a
+{
+    position: absolute;
+    right: 48px;
+    text-decoration: none;
+    padding: 30px;
+}
+.back a
+{
+    position: absolute;
+    left: 110px;
+    text-decoration: none;
+    padding: 30px;
+}
+.social a:hover
+{
+    color: #0040ff;
+    text-decoration: underline;
+}
+.link a:hover
+{
+    color: #0040ff;
+    text-decoration: underline;
+}
+.back a:hover
+{
+    color: #0040ff;
+    text-decoration: underline;
+}
+    </style>
 </head>
 <body>
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <a href="/GetUserAll" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>Account Details</p>
-  </a>
-  
-  
-  <a href="/GetTransactionAll" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-      <i class="fa fa-user w3-xxlarge"></i>
-    <p>Transaction Details</p>
-  </a>
+    <div class="background">
+    </div>
+    <form:form  method="post" modelAttribute="user" class="form">
+        <tr>
+            <h3>Bank Records</h3>
+        </tr>
+        <tr>
+            <div class="social">
+                    <a href="/GetUserAll" class="btn">Account Records</a>
+            </div>
+        </tr>
 
-</nav>
+        <tr>
+            <div class="link">
+                    <a href="/GetTransactionAll" class="btn">Transaction Records</a>
+            </div> 
+        </tr>
+        <tr>
+            <div class="back">
+                    <a href="/welcome" class="btn">Back</a>
+            </div> 
+        </tr>
+    </form:form>
 </body>
 </html>
