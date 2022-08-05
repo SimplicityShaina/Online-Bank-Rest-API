@@ -75,19 +75,19 @@ public class AccountController {
 	}
 	
 	
-	@GetMapping("/findOneAccount")
-	public String findAccountPage(Account acc)
-
-	{
-		return "accountDetals";
-	}
+//	@GetMapping("/findOneAccount")
+//	public String findAccountPage(Account acc)
+//
+//	{
+//		return "accountDetals";
+//	}
 	
-	@GetMapping("/set-myaccount")
-	public String MyAccountPage(Account acc,Model model)
-	{
-		return "myaccount";
-	}
-	
+//	@GetMapping("/set-myaccount")
+//	public String MyAccountPage(Account acc,Model model)
+//	{
+//		return "myaccount";
+//	}
+//	
 	
 	@GetMapping("/listAccount")
 	public String listAccountPage(Account acc)

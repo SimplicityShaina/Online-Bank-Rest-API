@@ -1,9 +1,6 @@
 package com.example.onlinebanking.controller;
 
 import java.util.List;
-
-
-
 import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -19,7 +16,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.example.onlinebanking.domain.Transaction;
 import com.example.onlinebanking.service.TransactionService;
 import com.example.onlinebanking.validation.TransactionValidator;
@@ -56,6 +52,7 @@ public class TransactionController {
 	{
 		Transaction transferamt=transactionService.transferamount(transaction.getAmounttx(),transaction.getFromAccount(),transaction.getToAccount());
 		model.addAttribute("transactionService",transferamt);
+		
 
 		return "amttransfersaved";
 		
@@ -125,5 +122,15 @@ public class TransactionController {
 	{
 		return "listTransaction";
 	}
+	
+//	@GetMapping(value="/findOne/{accno}",produces=MediaType.APPLICATION_JSON_VALUE)
+//	public ResponseEntity<Account>findOne(@PathVariable long accno){
+//		Account account=accountServiceJpa.getById(accno);
+//		System.out.println("accno is" +account);
+//		return new ResponseEntity<Account>(account,HttpStatus.OK);
+//		
+	
+	
+	
 	
 }

@@ -30,8 +30,6 @@ public class AccountServiceImpl implements AccountService{
 		tx.setTxdate(acc.getOpendate());
 		transactionRepository.save(tx);
 		
-		
-		
 		}
 	
 

@@ -35,8 +35,6 @@ ResultSet resultSet = null;
 <td><b>Account Type</b></td>
 <td><b>Account Holder Name</b></td>
 <td><b>Mobile Number</b></td>
-<td><b>Username</b></td>
-<td><b>Password</b></td>
 </tr>
 <%
 try{ 
@@ -54,8 +52,6 @@ while(resultSet.next()){
 <td><%=resultSet.getString("accType") %></td>
 <td><%=resultSet.getString("accholdername") %></td>
 <td><%=resultSet.getString("mobile") %></td>
-<td><%=resultSet.getString("username") %></td>
-<td><%=resultSet.getString("password") %></td>
 
 </tr>
 

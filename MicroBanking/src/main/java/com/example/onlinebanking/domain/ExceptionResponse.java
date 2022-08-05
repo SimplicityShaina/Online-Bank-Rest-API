@@ -20,7 +20,5 @@ public class ExceptionResponse {
 	public String toString() {
 		return "ExceptionResponse [errorCode=" + errorCode + ", errorMessage=" + errorMessage + "]";
 	}
-	
-	
 
 }

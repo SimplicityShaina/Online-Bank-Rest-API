@@ -6,7 +6,7 @@
 <title>VIEW TRANSACTION</title>
 </head>
 <body>
-		<h1> Transaction Details</h1>
+		<h1> Transaction Records</h1>
 		<h1> ${transac}</h1>
 </body>
 </html>

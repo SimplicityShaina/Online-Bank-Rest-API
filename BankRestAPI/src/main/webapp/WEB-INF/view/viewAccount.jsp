@@ -6,7 +6,7 @@
 <title>VIEW ACCOUNT</title>
 </head>
 <body>
-		<h1> Account Details
+		<h1> Account Records
 		</h1>
 		<h1> ${user}</h1>
 </body>
